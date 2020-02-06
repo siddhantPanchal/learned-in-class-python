@@ -1,0 +1,21 @@
+def permissions(isRead, isWrite, isExecute):
+    if isRead:
+        print("Read")
+    if isWrite:
+        print("Write")
+    if isExecute:
+        print("Execute")
+
+
+if __name__ == "__main__":
+    ch = 1
+    isRead = isWrite = isExecute = None
+    while ch:
+        try:
+            isRead, isWrite, isExecute = input("Enter 3 permissions 1.Read 2.Write 3.Execute : ").split(" ")
+        except TypeError:
+            print("please no space after last permission ")
+        except ValueError:
+            pass
+        permissions(int(isRead), int(isWrite), int(isExecute))
+        ch = int(input("Do u want to continue(0/1) : "))
